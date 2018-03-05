@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MealHunt</string>
+    <string name="welcome">WELCOME TO</string>
+    <string name="facebook_button">Facebook Here</string>
 </resources>
