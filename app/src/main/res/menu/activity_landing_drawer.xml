@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:checkable="true"
+            android:enabled="true"
+            android:icon="@drawable/ic_home"
+            android:title="@string/home"
+            android:visible="true" />
+        <item
+            android:id="@+id/nav_invite"
+            android:icon="@drawable/ic_plus"
+            android:title="@string/invite" />
+        <item
+            android:id="@+id/nav_groups"
+            android:icon="@drawable/ic_action_name"
+            android:title="@string/groups" />
+        <item
+            android:id="@+id/nav_about"
+            android:checkable="true"
+            android:enabled="true"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/about"
+            android:visible="true" />
+    </group>
+
+
+</menu>
