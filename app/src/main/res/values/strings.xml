@@ -13,4 +13,7 @@
     <string name="groups">Groups</string>
     <string name="invite">Invite</string>
     <string name="home">Home</string>
+    <string name="welcome">WELCOME TO</string>
+    <string name="facebook_button">Facebook Here</string>
+
 </resources>
