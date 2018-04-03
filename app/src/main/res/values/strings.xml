@@ -16,4 +16,8 @@
     <string name="welcome">WELCOME TO</string>
     <string name="facebook_button">Facebook Here</string>
 
+    <string name="facebook_app_id">2114364315476323</string>
+    <string name="fb_login_protocol_scheme">fb2114364315476323</string>
+
+
 </resources>
