@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "829555165143",
+    "firebase_url": "https://mealhunt-37928.firebaseio.com",
+    "project_id": "mealhunt-37928",
+    "storage_bucket": "mealhunt-37928.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829555165143:android:9d558ffcee51d72e",
+        "android_client_info": {
+          "package_name": "com.mealhunt.mealhunt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "829555165143-c8f4adapgbd2t1p0b6p7tdmlm7c1g77s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mealhunt.mealhunt",
+            "certificate_hash": "5d9be0031ca6428a4d8520a095d41a711208ccac"
+          }
+        },
+        {
+          "client_id": "829555165143-i30jdbq6squnmn8lqckkpsn27d2k8su6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0Iw_OTR9-Unkk8qiSOaRrlC30LNOl2QA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "829555165143-i30jdbq6squnmn8lqckkpsn27d2k8su6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
