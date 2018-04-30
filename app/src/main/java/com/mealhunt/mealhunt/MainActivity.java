@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(MainActivity.this, "Signed in to both FB and firebase.",
                                     Toast.LENGTH_SHORT).show();
+                            setContentView(R.layout.activity_landing);
                         } else {
                             // If sign in fails, display a message to the user.
 
