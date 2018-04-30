@@ -57,7 +57,7 @@
             tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/start_button"
             android:layout_width="170dp"
             android:layout_height="43dp"
             android:layout_centerHorizontal="true"

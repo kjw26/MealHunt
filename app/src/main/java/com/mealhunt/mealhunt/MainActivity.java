@@ -65,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
                         ); */
                             AccessToken token = loginResult.getAccessToken();
                             handleFacebookAccessToken(token);
+                            Intent activityChangeIntent = new Intent(MainActivity.this, huntActivity.class);
+                            MainActivity.this.startActivity(activityChangeIntent);
                         }
 
                         @Override

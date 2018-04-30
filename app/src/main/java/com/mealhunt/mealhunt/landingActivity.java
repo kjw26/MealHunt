@@ -1,8 +1,8 @@
 package com.mealhunt.mealhunt;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,19 +12,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.content.res.Configuration;
 
 public class landingActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener {
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
     private String mActivityTitle;
     private ArrayAdapter<String> mAdapter;
     private ListView mDrawerList;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +53,22 @@ public class landingActivity extends AppCompatActivity
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
+
+        button = (Button) findViewById(R.id.start_button);
+        button.setEnabled(true);
+        button.setOnClickListener(this);
+
     }
 
+    public void onClick(View view){
+        Log.i(  "button","clicked the button");
+
+        Intent activityChangeIntent = new Intent(landingActivity.this, huntActivity.class);
+
+        // currentContext.startActivity(activityChangeIntent);
+
+        landingActivity.this.startActivity(activityChangeIntent);
+    }
 
     private void setupDrawer() {
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.drawer_open, R.string.drawer_close) {

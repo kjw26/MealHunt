@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.mealhunt.mealhunt"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -17,6 +17,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main {
+            assets.srcDirs = ['src/main/assets', 'src/main/assets/']
+            res.srcDirs = ['src/main/res', 'src/main/res/drawable']
+        }
+    }
 }
 
 dependencies {
@@ -24,14 +30,30 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     //noinspection GradleCompatible
     implementation 'com.android.support:design:26.1.0'
-    implementation 'com.google.firebase:firebase-auth:12.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
-    implementation 'com.google.firebase:firebase-auth:12.0.0'
+    implementation 'com.google.firebase:firebase-auth:12.0.1'
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
+    // FirebaseUI for Firebase Realtime Database
+    implementation 'com.firebaseui:firebase-ui-database:3.3.0'
+
+// FirebaseUI for Cloud Firestore
+    implementation 'com.firebaseui:firebase-ui-firestore:3.3.0'
+
+// FirebaseUI for Firebase Auth
+    implementation 'com.firebaseui:firebase-ui-auth:3.3.0'
+
+// FirebaseUI for Cloud Storage
+    implementation 'com.firebaseui:firebase-ui-storage:3.3.0'
+
+    compile 'com.mindorks:placeholderview:0.7.1'
+    compile 'com.android.support:cardview-v7:26.0.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.google.code.gson:gson:2.7'
+
 }
 
 apply plugin: 'com.google.gms.google-services'
