@@ -59,18 +59,34 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // Check if message contains a data payload.
 
         if (remoteMessage.getData().size() > 0) {
-            //TODO : since msg too big, we can send the query in the payload, and then launch that class in huntActivity?
-            Log.i(TAG, "Message data payload: " + remoteMessage.getData());
-            String url = remoteMessage.getData().get("message");
-            printResults(sendGetRequest(url));
 
-            Log.i(TAG, "Short lived task is done.");
+            if (remoteMessage.getData().get("message") != null) { // app is receiving json data for restaurants
+                Log.i("edittext", "received json data payload.");
+                String url = remoteMessage.getData().get("message");
+                printResults(sendGetRequest(url));
+
+                Log.i(TAG, "Short lived task is done.");
+            }
+            else { // app is receiving final votes
+                Log.i("edittext", "received final votes payload.");
+                String placeId = remoteMessage.getData().get("body");
+                String title = remoteMessage.getData().get("title");
+                String url = "https://www.google.com/maps/search/?api=1&query=Google&query_place_id=" + placeId;
+                sendNotification("Click here to open maps.", title, url);
+
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(browserIntent);
+            }
         }
 
         // Check if message contains a notification payload.
         if (remoteMessage.getNotification() != null) {
             Log.i(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
-            sendNotification(remoteMessage.getNotification().getBody());
+            String link = "https://www.google.com/maps/search/?api=1&query=Google&query_place_id=" + remoteMessage.getNotification().getBody();
+            sendNotification("Time to eat!", remoteMessage.getNotification().getTitle(),link);
+
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+            startActivity(browserIntent);
         }
 
         // Also if you intend on generating your own notifications as a result of a received FCM
@@ -131,8 +147,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
      *
      * @param messageBody FCM message body received.
      */
-    private void sendNotification(String messageBody) {
+    private void sendNotification(String messageBody, String title, String link) {
         Intent intent = new Intent(this, MainActivity.class);
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(link));
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
@@ -142,7 +160,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this, channelId)
                         .setSmallIcon(R.drawable.ic_stat_ic_notification)
-                        .setContentTitle("FCM Message")
+                        .setContentTitle(title)
                         .setContentText(messageBody)
                         .setAutoCancel(true)
                         .setSound(defaultSoundUri)

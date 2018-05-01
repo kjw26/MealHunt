@@ -13,17 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
-
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
+        </activity>
         <activity android:name=".LpActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mealhunt.mealhunt.MainActivity" />
         </activity>
+
         <activity
             android:name=".landingActivity"
             android:label="@string/title_activity_landing"
@@ -56,14 +57,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".group_page">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
-<<<<<<< HEAD
             android:name=".huntActivity"
             android:label="@string/title_activity_hunt"
             android:theme="@style/AppTheme" />
@@ -85,7 +80,7 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/default_notification_channel_id"/>
-=======
+        <activity
             android:name=".about_page"
             android:label="@string/title_activity_page"
             android:theme="@style/AppTheme" />
@@ -93,7 +88,6 @@
             android:name=".invite_activity"
             android:label="@string/title_activity_invite_activity"
             android:theme="@style/AppTheme"></activity>
->>>>>>> landingfix_navbuttons
     </application>
 
 </manifest>

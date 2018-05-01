@@ -74,7 +74,7 @@ public class Profile {
     public String getVicinity(){
         return vicinity;
     }
-
+    public String getPlaceId() {return place_id;}
     public class Geometry {
         public Location location;
         public Viewport viewport;

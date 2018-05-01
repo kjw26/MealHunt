@@ -118,8 +118,8 @@ public class huntActivity extends AppCompatActivity {
                 c.setRequestProperty("Content-length", "0");
                 c.setUseCaches(false);
                 c.setAllowUserInteraction(false);
-                c.setConnectTimeout(1000);
-                c.setReadTimeout(1000);
+                c.setConnectTimeout(7000);
+                c.setReadTimeout(7000);
                 c.connect();
                 int status = c.getResponseCode();
 

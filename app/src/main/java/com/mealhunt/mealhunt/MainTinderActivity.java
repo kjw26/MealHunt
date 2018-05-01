@@ -36,6 +36,7 @@ public class MainTinderActivity extends AppCompatActivity {
                 mSwipeView.addView(new TinderCard(mContext, profile, mSwipeView));
             }
         }
+        mSwipeView.getAllResolvers().size();
 
         findViewById(R.id.rejectBtn).setOnClickListener(new View.OnClickListener() {
             @Override
