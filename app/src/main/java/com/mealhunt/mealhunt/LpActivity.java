@@ -24,7 +24,8 @@ public class LpActivity extends AppCompatActivity implements NavigationView.OnNa
 }
     public void faceIn(View view)
     {
-        Intent myIntent = new Intent(LpActivity.this, MainActivity.class);
+        Intent myIntent = new Intent(LpActivity.this, huntActivity.class);
+        //Intent myIntent = new Intent(LpActivity.this, firebase_groups.class);
         LpActivity.this.startActivity(myIntent);
     }
     public void homeGo(View view)

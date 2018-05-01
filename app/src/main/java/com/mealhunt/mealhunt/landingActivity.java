@@ -54,7 +54,7 @@ public class landingActivity extends AppCompatActivity
         getSupportActionBar().setHomeButtonEnabled(true);
 
 
-        button = (Button) findViewById(R.id.start_button);
+        button = (Button) findViewById(R.id.button13);
         button.setEnabled(true);
         button.setOnClickListener(this);
 

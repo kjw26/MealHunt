@@ -23,10 +23,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView info;
     private LoginButton loginButton;
     private CallbackManager callbackManager;
     private FirebaseAuth mAuth;
@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         callbackManager = CallbackManager.Factory.create();
 
         setContentView(R.layout.activity_main);
-        info = (TextView)findViewById(R.id.status);
         loginButton = (LoginButton)findViewById(R.id.login_button);
         loginButton.setReadPermissions("email", "public_profile");
         LoginManager.getInstance().logOut();
@@ -65,18 +64,20 @@ public class MainActivity extends AppCompatActivity {
                         ); */
                             AccessToken token = loginResult.getAccessToken();
                             handleFacebookAccessToken(token);
-                            Intent activityChangeIntent = new Intent(MainActivity.this, huntActivity.class);
+                            FirebaseMessaging.getInstance().subscribeToTopic("eating_group");
+                            //Intent activityChangeIntent = new Intent(MainActivity.this, huntActivity.class);
+                            Intent activityChangeIntent = new Intent(MainActivity.this, LpActivity.class);
                             MainActivity.this.startActivity(activityChangeIntent);
                         }
 
                         @Override
                         public void onCancel() {
-                            changeInfoMsg("Login attempt canceled.");
+                            Log.i("edittext", "Login attempt cancelled.");
                         }
 
                         @Override
                         public void onError(FacebookException exception) {
-                            changeInfoMsg("Login attempt failed.");
+                            Log.i("edittext", "Login attempt failed.");
                         }
                     });
         }
@@ -89,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
+        /* --- let's make them re-log every time.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             changeInfoMsg("You're already signed in! Welcome Back.");
@@ -96,12 +98,8 @@ public class MainActivity extends AppCompatActivity {
         else {
             changeInfoMsg("You're not signed in. Please sign in.");
         }
+        */
 
-    }
-
-    public void changeInfoMsg(String message) {
-        info = (TextView)findViewById(R.id.status);
-        info.setText(message);
     }
 
     private void handleFacebookAccessToken(AccessToken token) {
