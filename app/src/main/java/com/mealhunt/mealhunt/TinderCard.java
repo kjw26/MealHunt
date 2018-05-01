@@ -49,9 +49,10 @@ public class TinderCard {
     }
 
     @SwipeOut
-    private void onSwipedOut(){
+    private void onSwipedOut(){ // left swipe/reject
         Log.d("EVENT", "onSwipedOut");
-        mSwipeView.addView(this);
+        //mSwipeView.addView(this);
+
     }
 
     @SwipeCancelState
@@ -60,8 +61,10 @@ public class TinderCard {
     }
 
     @SwipeIn
-    private void onSwipeIn(){
+    private void onSwipeIn(){ // right swipe/accept
         Log.d("EVENT", "onSwipedIn");
+        // send name of restaurant to PHP to store in DB
+        // php will check counts.. when it is >=2, retrieve the winning place's name, and delete the rows in SQL
     }
 
     @SwipeInState

@@ -32,7 +32,9 @@ public class MainTinderActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         for(Profile profile : Utils.loadProfiles(this.getApplicationContext(), intent.getExtras().getString("str"))){ //need to include the json string in the call
-            mSwipeView.addView(new TinderCard(mContext, profile, mSwipeView));
+            if (profile.getPhotos() != null) {
+                mSwipeView.addView(new TinderCard(mContext, profile, mSwipeView));
+            }
         }
 
         findViewById(R.id.rejectBtn).setOnClickListener(new View.OnClickListener() {
