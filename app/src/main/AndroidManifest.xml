@@ -6,28 +6,25 @@
 
     <application
         android:allowBackup="true"
+        android:exported="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:exported="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".LpActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        </activity>
-        <activity android:name=".LpActivity" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".landingActivity"
             android:label="@string/title_activity_landing"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mealhunt.mealhunt.MainActivity" />
@@ -54,12 +51,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".group_page">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity
+            android:name=".about_page"
+            android:label="@string/title_activity_page"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".invite_activity"
+            android:label="@string/title_activity_invite_activity"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

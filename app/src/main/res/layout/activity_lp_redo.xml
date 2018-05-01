@@ -10,6 +10,7 @@
         android:id="@+id/imland"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:scaleType="fitXY"
@@ -21,19 +22,28 @@
         tools:layout_editor_absoluteY="31dp"
         android:layout_alignParentLeft="true" />
 
+    <TextView  android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:id="@+id/textView1"
+        android:layout_height="wrap_content"
+        android:text=" " >
+
+    </TextView>
+
     <Button
         android:id="@+id/button13"
         android:layout_width="260dp"
-        android:layout_height="138dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="65dp"
+        android:layout_below="@id/textView1"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="248dp"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginBottom="262dp"
         android:background="#03a989"
         android:onClick="faceIn"
         android:text="Start Hunt"
         android:textSize="18sp"
         android:visibility="visible"
-        tools:ignore="RtlCompat" />
-</RelativeLayout>
+         />
 
+
+</RelativeLayout>

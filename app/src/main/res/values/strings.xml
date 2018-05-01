@@ -109,6 +109,8 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="cancel">Cancel</string>
+    <string name="title_activity_page">activity_page</string>
+    <string name="title_activity_invite_activity">invite_activity</string>
 
 
 </resources>
