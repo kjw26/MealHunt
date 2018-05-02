@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                         ); */
                             AccessToken token = loginResult.getAccessToken();
                             handleFacebookAccessToken(token);
-                            FirebaseMessaging.getInstance().subscribeToTopic("eating_group");
+                            FirebaseMessaging.getInstance().subscribeToTopic("friends");
                             //Intent activityChangeIntent = new Intent(MainActivity.this, huntActivity.class);
                             Intent activityChangeIntent = new Intent(MainActivity.this, LpActivity.class);
                             MainActivity.this.startActivity(activityChangeIntent);

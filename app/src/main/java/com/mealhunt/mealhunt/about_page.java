@@ -57,7 +57,7 @@ public class about_page extends LpActivity implements NavigationView.OnNavigatio
             about_page.this.startActivity(myIntent);
         }
         if (id == R.id.nav_groups) {
-            Intent myIntent = new Intent(about_page.this, group_page.class);
+            Intent myIntent = new Intent(about_page.this, firebase_groups.class);
             about_page.this.startActivity(myIntent);
 
 

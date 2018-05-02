@@ -51,7 +51,18 @@ public class TinderCard {
 
     @Resolve
     private void onResolved() {
-
+        if (mProfile == null) {
+            Log.i("edittext", "profile itself came back null");
+        }
+        if (mProfile.getPhotos() == null) {
+            Log.i("edittext", "photos array came back null");
+        }
+        if (mProfile.getPhotos().get(0) == null) {
+            Log.i("edittext", "photos array sub 0 came back null");
+        }
+        if (mProfile.getPhotos().get(0).getPhotoReference() == null) {
+            Log.i("edittext", "photo reference string came back null");
+        }
         Glide.with(mContext).load(mProfile.getPhotos().get(0).getPhotoReference()).into(profileImageView);
         nameTxt.setText(mProfile.getName());// + ", " + mProfile.getAge());
         locationNameTxt.setText(mProfile.getVicinity());

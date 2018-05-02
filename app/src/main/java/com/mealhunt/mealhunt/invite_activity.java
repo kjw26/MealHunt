@@ -57,7 +57,7 @@ public class invite_activity extends LpActivity implements NavigationView.OnNavi
             invite_activity.this.startActivity(myIntent);
         }
         if (id == R.id.nav_groups) {
-            Intent myIntent = new Intent(invite_activity.this, group_page.class);
+            Intent myIntent = new Intent(invite_activity.this, firebase_groups.class);
             invite_activity.this.startActivity(myIntent);
 
 

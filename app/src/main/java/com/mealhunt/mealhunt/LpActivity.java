@@ -55,7 +55,8 @@ public class LpActivity extends AppCompatActivity implements NavigationView.OnNa
             LpActivity.this.startActivity(myIntent);
         }
         if (id == R.id.nav_groups) {
-            Intent myIntent = new Intent(LpActivity.this, group_page.class);
+            //Intent myIntent = new Intent(LpActivity.this, group_page.class);
+            Intent myIntent = new Intent(LpActivity.this, firebase_groups.class);
             LpActivity.this.startActivity(myIntent);
 
 
